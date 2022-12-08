@@ -1,0 +1,35 @@
+.login{
+      padding-top:5rem;
+}
+.login h1{
+      color: #4CAF50;
+}
+.form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.form input{
+      margin: 30px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 300px;
+}
+
+.form input[type="submit"]{
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      width: 300px;
+      cursor: pointer;
+}
+
+.form p{
+      color: #425843;
+      font-size: small;
+}
+.form p a{
+      color: #4CAF50;
+}
