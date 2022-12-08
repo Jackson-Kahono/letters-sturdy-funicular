@@ -117,3 +117,19 @@ label{
       padding: 10px;
       border-radius: 5px;
 }
+.pers , .pub{
+      font-size: smaller;
+      width:100px;
+      height: 80px;
+      border:1px dashed #ccc;
+      margin:2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+}
+.choose{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+}

@@ -1,6 +1,7 @@
 import "./Home.css";
 import Letter from "./Letter";
 import Nav from "./Nav";
+import WriteLetter from "./WriteLetter";
 
 
 function Home({create, letters}) {
@@ -17,20 +18,7 @@ function Home({create, letters}) {
         </div>
       </div>
       ) : (
-        <div className="letter">
-          <h1>Letter</h1>
-          <div className="create">
-            <form>
-              <div className="form">
-                <textarea placeholder="Write your letter here" />
-
-                <input type="date"/>
-                <label>When do you want to receive it?</label>
-                <input type="submit" value="Send" />
-                </div>
-            </form>
-          </div>
-    </div>
+         <WriteLetter />
       )}
     </div>
   );
