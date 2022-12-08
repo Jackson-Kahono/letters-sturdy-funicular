@@ -19,7 +19,7 @@ export default function SignUp(){
                   password: e.target[1].value
             }
 
-            fetch('http://localhost:5000/api/users', {
+            fetch('http://localhost:3000/api/users', {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json'

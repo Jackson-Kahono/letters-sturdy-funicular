@@ -8,7 +8,7 @@ function WriteLetter() {
       text: e.target[0].value,
       date: e.target[1].value,
     };
-    fetch("http://localhost:5000/api/letters", {
+    fetch("http://localhost:3000/api/letters", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

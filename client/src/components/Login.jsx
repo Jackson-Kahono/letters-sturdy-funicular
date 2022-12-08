@@ -8,7 +8,7 @@ function Login() {
       username: e.target[0].value,
       password: e.target[1].value,
     };
-    fetch("http://localhost:5000/api/users/login", {
+    fetch("http://localhost:3000/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

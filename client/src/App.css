@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+
 body{
-  background-color: #effdee;
+  background-image: url("https://source.unsplash.com/1600x900/?nature");
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
