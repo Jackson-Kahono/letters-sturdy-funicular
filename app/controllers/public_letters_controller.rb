@@ -1,5 +1,6 @@
 class PublicLettersController < ApplicationController
     def index
+<<<<<<< HEAD
         period = params[:period]
         if period == "all"
             public_letters = PublicLetter.all
@@ -13,17 +14,25 @@ class PublicLettersController < ApplicationController
         public_letters = public_letters.order(date: :desc)
         render json: public_letters, include: :user
         
+=======
+        render json: PublicLetter.all
+>>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
     end
 
     def show
         public_letter = PublicLetter.find_by(id: params[:id])
         if public_letter
             render json: public_letter, include: :user
+<<<<<<< HEAD
         else
+=======
+        else 
+>>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
             render json: {error: "Letter not found"}, status: :not_found
         end
     end
 
+<<<<<<< HEAD
     def create
         params[:date] = Date.today
         params[:views] = 0
@@ -37,6 +46,8 @@ class PublicLettersController < ApplicationController
         end
     end
 
+=======
+>>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
 
     def increment_likes
 
@@ -46,9 +57,13 @@ class PublicLettersController < ApplicationController
 
     end
 
+<<<<<<< HEAD
     def public_letter_params
         params.permit(:text, :date, :views, :likes, :user_id)
     end
 
 
+=======
+    
+>>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
 end

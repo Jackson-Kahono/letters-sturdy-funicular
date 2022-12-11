@@ -51,5 +51,8 @@ end
 gem "active_model_serializers", "~> 0.10.12"
 
 gem 'faker'
+<<<<<<< HEAD
 
 gem 'rack-cors'
+=======
+>>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
