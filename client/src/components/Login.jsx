@@ -12,7 +12,7 @@ function Login() {
       username: e.target[0].value,
       password_digest: e.target[1].value,
     };
-    fetch(`${baseUrl}/login`, {
+    fetch(`${baseUrl}login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

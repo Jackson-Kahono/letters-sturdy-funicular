@@ -15,7 +15,7 @@ export default function SignUp(){
                   email: e.target.email.value
             }
 
-            fetch(`${baseUrl}/users`, {
+            fetch(`${baseUrl}users`, {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json'

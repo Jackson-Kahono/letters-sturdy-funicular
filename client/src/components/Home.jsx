@@ -11,9 +11,9 @@ function Home({ create, period, personal }) {
   useEffect(() => {
     setLetters([]);
     setIsEmpty(true);
-    let url =  `${baseUrl}/public_letters`;
+    let url =  `${baseUrl}public_letters`;
     if (personal) {
-      url = `${baseUrl}/private_letters?id=${localStorage.getItem("token")}`;
+      url = `${baseUrl}private_letters?id=${localStorage.getItem("token")}`;
     } else {
       switch (period) {
         case "week":
