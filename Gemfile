@@ -55,4 +55,4 @@ gem 'faker'
 gem 'rack-cors'
 
 #gem for pg
-gem 'pg' , '~> 1.4.4'
+gem 'pg'
