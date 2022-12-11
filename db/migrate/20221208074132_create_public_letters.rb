@@ -5,7 +5,6 @@ class CreatePublicLetters < ActiveRecord::Migration[6.1]
       t.datetime :date
       t.integer :views
       t.integer :likes
-      t.integer :user_id
       t.belongs_to :user, null: false, foreign_key: true
 
 

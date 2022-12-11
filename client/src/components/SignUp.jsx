@@ -32,7 +32,7 @@ export default function SignUp(){
                         return;
                   }
                   localStorage.setItem('token', data.id);
-                  window.location.href = '/';
+                  window.location.href = '/home';
             })
       }
 

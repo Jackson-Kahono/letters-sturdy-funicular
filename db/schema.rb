@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,15 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2022_12_08_101833) do
-=======
 
-ActiveRecord::Schema.define(version: 2022_12_08_074132) do
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "private_letters", force: :cascade do |t|
     t.string "text"
     t.datetime "date"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_private_letters_on_user_id"
@@ -31,24 +29,20 @@ ActiveRecord::Schema.define(version: 2022_12_08_074132) do
     t.datetime "date"
     t.integer "views"
     t.integer "likes"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_public_letters_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "tests", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-=======
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "phone_number"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

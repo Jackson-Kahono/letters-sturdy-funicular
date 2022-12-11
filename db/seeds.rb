@@ -3,11 +3,11 @@ PrivateLetter.destroy_all
 PublicLetter.destroy_all
 
 5.times do
-    User.create(name: Faker::Name.name, email: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, password_digest: Faker::String.random )
+    User.create(name: Faker::Name.name, email: Faker::Address.full_address, password_digest: Faker::String.random )
 
 end
 
-5.times do 
+5.times do
     PrivateLetter.create(text: Faker::Lorem.paragraph , date: Faker::Date.in_date_period, user_id: 6)
 end
 
