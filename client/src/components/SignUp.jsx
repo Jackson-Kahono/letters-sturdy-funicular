@@ -1,25 +1,21 @@
 import './Login.css';
-import { useEffect } from 'react';
+import baseUrl from '../Url';
 
 export default function SignUp(){
-      useEffect(() => {
-            if(localStorage.getItem('token')){
-                  window.location.href = '/';
-            }
-      }, []);
 
       function handleSignUp(e){
             e.preventDefault();
-            if(e.target[1].value !== e.target[2].value){
+            if(e.target.password.value !== e.target['conf-password'].value){
                   alert('Passwords do not match');
                   return;
             }
             const user = {
-                  username: e.target[0].value,
-                  password: e.target[1].value
+                  name: e.target.username.value,
+                  password_digest: e.target.password.value,
+                  email: e.target.email.value
             }
 
-            fetch('http://localhost:5000/api/users', {
+            fetch(`${baseUrl}/users`, {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json'
@@ -27,13 +23,15 @@ export default function SignUp(){
                   body: JSON.stringify(user)
             })
             .then(res => {
-                  if(res.ok){
-                        return res.json();
-                  }
-                  alert('Username already exists');
+                  return res.json();
             })
             .then(data => {
-                  localStorage.setItem('token', data.token);
+                  if(data.errors){
+                        alert(data.errors[0]);
+                        console.log(data.errors);
+                        return;
+                  }
+                  localStorage.setItem('token', data.id);
                   window.location.href = '/';
             })
       }
@@ -43,9 +41,10 @@ export default function SignUp(){
                   <h1>Sign Up</h1>
                   <form onSubmit={handleSignUp}>
                         <div className="form">
-                              <input type="text" placeholder="Enter your username" />
-                              <input type="password" placeholder="Enter your password" />
-                              <input type="password" placeholder="Confirm your password" />
+                              <input type="text" name='username' placeholder="Enter your username" />
+                              <input type="email" name='email' placeholder="Enter your email" />
+                              <input type="password" name='password' placeholder="Enter your password" />
+                              <input type="password" name='conf-password' placeholder="Confirm your password" />
                               <input type="submit" value="Sign Up" />
                               <p>Already have an account? <a href='/login'>Log in</a></p>
                         </div>

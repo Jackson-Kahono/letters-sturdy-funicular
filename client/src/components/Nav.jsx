@@ -5,19 +5,16 @@ function Nav() {
     <div className="nav">
       <div className="items">
         <div>
-          <Link to="/">Home</Link>
+          <Link to="/home">Public letters</Link>
         </div>
         <div>
-          <Link to="/gh">Public letters</Link>
+          <Link to="/week">From this week</Link>
         </div>
         <div>
-          <Link to="/gh">From this week</Link>
+          <Link to="/month">From this month</Link>
         </div>
         <div>
-          <Link to="/gh">From this month</Link>
-        </div>
-        <div>
-          <Link to="/gh">Personal</Link>
+          <Link to="/personal">Personal</Link>
         </div>
         <div>
           <Link to="/create">Create</Link>

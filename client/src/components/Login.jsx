@@ -1,14 +1,18 @@
 import "./Login.css";
+import baseUrl from "../Url";
 
 function Login() {
+  if(localStorage.getItem("token")){
+    window.location.href = "/home";
+  }
 
   function handleLogin(e) {
     e.preventDefault();
     const user = {
       username: e.target[0].value,
-      password: e.target[1].value,
+      password_digest: e.target[1].value,
     };
-    fetch("http://localhost:5000/api/users/login", {
+    fetch(`${baseUrl}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,6 +25,10 @@ function Login() {
         }
         alert("Incorrect username or password");
       })
+      .then((data) => {
+        localStorage.setItem("token", data.id);
+        window.location.href = "/home";
+      });
   }
   return (
     <div className="login">
