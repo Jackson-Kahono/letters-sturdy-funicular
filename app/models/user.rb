@@ -1,15 +1,10 @@
 #require 'bcrypt'
-<<<<<<< HEAD
 class User < ApplicationRecord
-=======
-class User < ApplicationRecord::Base
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
     #include Bcrypt
 
     has_many :public_letters, dependent: :destroy
     has_many :private_letters, dependent: :destroy
 
-<<<<<<< HEAD
     # has_secure_password
 
     validates_presence_of :email
@@ -21,15 +16,6 @@ class User < ApplicationRecord::Base
 
     #creating a password
     # def password
-=======
-    has_secure_password
-
-    validates_presence_of :email
-    validates_uniqueness_of :email
-    
-    #creating a password
-    # def password 
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
     #     @password || = Password.new(password_hash)
     # end
 
@@ -54,7 +40,6 @@ class User < ApplicationRecord::Base
     #         redirect_to_home_url
     #     end
     # end
-<<<<<<< HEAD
     def authenticate(password)
         #bcrypt compare hash and password
         puts "password_digest: #{self.password_digest}"
@@ -62,6 +47,4 @@ class User < ApplicationRecord::Base
         BCrypt::Password.new(self.password_digest) == password
 
     end
-=======
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
 end

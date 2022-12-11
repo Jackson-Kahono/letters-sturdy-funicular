@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
     def index
-<<<<<<< HEAD
         render json: User.all
-=======
-        render json: User.all 
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
     end
 
     #Handle auto-login by implementing a `GET /me` route.
@@ -17,7 +13,6 @@ class UsersController < ApplicationController
         end
     end
 
-<<<<<<< HEAD
     def login
         user = User.find_by(name: params[:name]);
         if user && user.authenticate(params[:password_digest])
@@ -34,11 +29,6 @@ class UsersController < ApplicationController
         params[:password_digest] = password(params[:password_digest])
         user = User.create(user_params)
 
-=======
-    #Handle sign up by implementing a `POST /signup` route.
-    def create
-        user = User.create(user_params);
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
         if user.valid?
             session[:user_id] = user.id;
             render json:user, status: :created
@@ -62,24 +52,17 @@ class UsersController < ApplicationController
     private
 
     def user_params
-<<<<<<< HEAD
         params.permit(:name, :email, :phone_number, :password_digest)
-=======
-        params.permit(:name, :email, :phone_number, :password_confirmation)
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
     end
 
     def find_user
         User.find(params[:id])
     end
 
-<<<<<<< HEAD
      #hash password
      def password(password)
         BCrypt::Password.create(password)
      end
 
-=======
->>>>>>> 51397f7f421d2a5712db92c40055cd42e2dfbed8
 
 end
