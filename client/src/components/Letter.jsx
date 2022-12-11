@@ -17,7 +17,7 @@ function Letter({ letter }) {
           if(!window.confirm("Are you sure you want to delete this letter?")){
             return;
           }
-          fetch(`${baseUrl}/public_letters/${letter.id}`,{
+          fetch(`${baseUrl}public_letters/${letter.id}`,{
             method: "DELETE"
           }
           )
@@ -28,7 +28,7 @@ function Letter({ letter }) {
             alert("Something went wrong");
           })
           .then((data)=>{
-            window.location.href = "/";
+            window.location.reload();
           })
 
         }

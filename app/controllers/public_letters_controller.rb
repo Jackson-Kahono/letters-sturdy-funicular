@@ -37,6 +37,13 @@ class PublicLettersController < ApplicationController
         end
     end
 
+    def destroy
+        public_letter = PublicLetter.find_by(id: params[:id])
+        public_letter.destroy
+        render json: public_letter, status: :no_content
+    end
+    
+
 
     def increment_likes
 
