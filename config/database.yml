@@ -4,8 +4,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV['PGHOST'] %>
-  port: <%= ENV['PGPORT'] %>
+
 
 
 development:
@@ -17,8 +16,4 @@ test:
   database: my_rails_app_test
 
 production:
-  <<: *default
-  database: <%= ENV['PGDATABASE'] %>
-  username: <%= ENV['PGUSER'] %>
-  password: <%= ENV['PGPASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
